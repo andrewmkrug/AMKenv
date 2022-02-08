@@ -1,4 +1,6 @@
 // Name: short links
+// Description: Save impoort links with a description as well, better than just bookmarking.
+// Author: Andrew M Krug
 
 /** @type {import("@johnlindquist/kit")} */
 
