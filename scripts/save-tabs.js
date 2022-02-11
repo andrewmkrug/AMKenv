@@ -1,7 +1,7 @@
 // Name: Save Tabs
 // Description: Save all tabs to a markdownfile, with support for Obsidian.
 // Author: Andrew M Krug
-// twitter: @andrewmukrug
+// twitter: @andrewmkrug
 
 import "@johnlindquist/kit";
 import browsers from "./browsers.js";

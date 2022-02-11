@@ -1,17 +1,15 @@
-// Name: easy-links
+// Name: Easy Links
 // Description: Save impoort links with a description as well, better than just bookmarking.
 // Author: Andrew M Krug
+// Twitter: @andrewmkrug
 
 /** @type {import("@johnlindquist/kit")} */
 
+import browsers from "./browsers.js";
+
 let { links, write } = await db({ links: [] });
 
-let browser = await env("KIT_BROWSER", [
-  "Google Chrome",
-  "Brave",
-  "Firefox",
-  "Edge",
-]);
+let browser = await env("KIT_BROWSER", browsers);
 
 function setPreview(name, url, description) {
   return md(`# ${name} 
@@ -23,7 +21,7 @@ function setPreview(name, url, description) {
 
 onTab("Links", async () => {
   while (true) {
-    let link = await arg("Toggle todo:", links);
+    let link = await arg("Open a link:", links);
 
     let t = _.find(links, link);
     await focusWindow(browser, "");
