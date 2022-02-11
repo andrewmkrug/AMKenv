@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "init": "cp -r assets/ ../../assets && rm ../../assets/.gitignore"
   }
