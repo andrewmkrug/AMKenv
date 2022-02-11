@@ -1,3 +1,6 @@
 {
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "init": "cp -r assets/ ../../assets && rm ../../assets/.gitignore"
+  }
 }
