@@ -2,6 +2,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "start": "npm run init",
     "init": "cp -r assets/ ../../assets && rm ../../assets/.gitignore"
   }
 }
