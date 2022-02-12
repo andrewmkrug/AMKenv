@@ -1,6 +1,21 @@
 {
   "type": "module",
   "main": "index.js",
+  "version": "0.0.1",
+  "description": "A shareable kenv for ScriptKit from Andrew M Krug",
+  "keywords": [
+    "scriptkit",
+    "kenv",
+    "scriptkit-kenv"
+  ],
+  "author": {
+    "name": "Andrew M Krug",
+    "email": "andrewmkrug@pm.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewmkrug/AMKenv.git"
+  },
   "scripts": {
     "start": "npm run init",
     "init": "cp -r assets/ ../../assets && rm ../../assets/.gitignore",
