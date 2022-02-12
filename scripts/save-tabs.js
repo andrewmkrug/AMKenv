@@ -4,7 +4,8 @@
 // twitter: @andrewmkrug
 
 import "@johnlindquist/kit";
-import browsers from "./browsers.js";
+import browsers from "../lib/browsers.js";
+// import { Browser } from "@johnlindquist/kit/types/platform"
 
 let obsidianDir = await env("NOTES_DIR", "Path to directory for saving tabs");
 log("getting tabs");
