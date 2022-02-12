@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/andrewmkrug/AMKenv/compare/v0.0.3...v0.0.4) (2022-02-12)
+
+
+### Features
+
+* **commit-utils:** ✨ added utils for commits ([265969b](https://github.com/andrewmkrug/AMKenv/commit/265969b4ff04070fc09c50ad98557b660d24992e))
+* **commit-utils:** ✨ added utils for commits ([147c786](https://github.com/andrewmkrug/AMKenv/commit/147c7867c9f3788ab4723c75039b86d1ced00735))
+
 ### 0.0.3 (2022-02-12)
 
 
