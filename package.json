@@ -17,11 +17,16 @@
     "url": "https://github.com/andrewmkrug/AMKenv.git"
   },
   "scripts": {
-    "start": "npm run init",
-    "init": "cp -r assets/ ../../assets && rm ../../assets/.gitignore",
-    "release": "standard-version"
+    "prepare": "node index.js",
+    "release": "standard-version",
+    "resolve:icons": "node getIcons.js"
   },
   "devDependencies": {
+    "browser-logos": "github:alrra/browser-logos#70.4.1",
     "standard-version": "^9.3.2"
+  },
+  "dependencies": {
+    "@johnlindquist/kit": "^0.5.2",
+    "command-exists": "^1.2.9"
   }
 }
