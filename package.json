@@ -1,7 +1,7 @@
 {
   "type": "module",
   "main": "index.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A shareable kenv for ScriptKit from Andrew M Krug",
   "keywords": [
     "scriptkit",
@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "@johnlindquist/kit": "^0.5.2",
-    "command-exists": "^1.2.9"
+    "command-exists": "^1.2.9",
+    "fs-extra": "^10.0.0",
+    "node-port-check": "^2.0.1"
   }
 }
