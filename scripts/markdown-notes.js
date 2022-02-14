@@ -2,7 +2,7 @@
 // Description: Quickly open and access notes in markdown.
 // Author: Andrew M Krug
 // Twitter: @andrewmkrug
-// img: /Users/andrewmkrug/.kenv/assets/markdown.svg
+// img: /assets/markdown.svg
 
 /** @type {import("@johnlindquist/kit")} */
 
@@ -12,18 +12,18 @@ let tools = [
   {
     name: "Obsidian",
     description: "Markdown note taking app",
-    img: kenvPath("/assets/obsidian-logo.svg"),
+    img: kenvPath("/assets/obsidian-logo.svg")
   },
   {
     name: "Markdown",
     description: "Popup window for quick editing, will be a paid feature",
-    img: kenvPath("/assets/script-kit-logo.svg"),
+    img: kenvPath("/assets/script-kit-logo.svg")
   },
   {
     name: "VS Code",
     description: "Code editor from Microsoft",
-    img: kenvPath("/assets/visual-studio-code.svg"),
-  },
+    img: kenvPath("/assets/visual-studio-code.svg")
+  }
 ];
 
 async function pathToArray(path) {
