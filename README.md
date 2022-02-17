@@ -4,7 +4,9 @@ The recommended process is to use the url and clone this kenv into your main ken
 
 ## Setup
 
-Once this kenv is cloned into your run `npm i` this will copy all of the files into the parent asset directory.
+Make sure you have added `kit` to your cli.
+
+Once this kenv is cloned into your run `npm run postprepare` this will copy all of the files into the parent asset directory.
 
 ## Developent
 
