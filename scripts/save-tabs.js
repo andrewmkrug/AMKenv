@@ -2,7 +2,7 @@
 // Description: Save all tabs to a markdownfile, with support for Obsidian.
 // Author: Andrew M Krug
 // twitter: @andrewmkrug
-// base-img: /assets/markdown.svg
+// base-img: /assets/save-tab.svg
 
 import "@johnlindquist/kit";
 import browsers from "../lib/browsers.js";
