@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/andrewmkrug/AMKenv/compare/v0.0.8...v0.0.9) (2022-02-17)
+
+
+### Bug Fixes
+
+* **scripts:** removing old scripts ([518ea81](https://github.com/andrewmkrug/AMKenv/commit/518ea816ec14676e1a88c0c61797547a367be9d6))
+
 ### [0.0.8](https://github.com/andrewmkrug/AMKenv/compare/v0.0.7...v0.0.8) (2022-02-17)
 
 
