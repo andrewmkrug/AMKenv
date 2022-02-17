@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/andrewmkrug/AMKenv/compare/v0.0.7...v0.0.8) (2022-02-17)
+
+
+### Features
+
+* **easy-links:** ✨ import export ([9032003](https://github.com/andrewmkrug/AMKenv/commit/9032003e2e9949babd68bdb69d38c0202f7d09b6))
+
 ### [0.0.7](https://github.com/andrewmkrug/AMKenv/compare/v0.0.6...v0.0.7) (2022-02-17)
 
 

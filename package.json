@@ -1,7 +1,7 @@
 {
   "type": "module",
   "main": "index.js",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A shareable kenv for ScriptKit from Andrew M Krug",
   "keywords": [
     "scriptkit",
