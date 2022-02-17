@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/andrewmkrug/AMKenv/compare/v0.0.6...v0.0.7) (2022-02-17)
+
+
+### Features
+
+* **commit:** ✨ base-img param for script img ([f107d55](https://github.com/andrewmkrug/AMKenv/commit/f107d55e46700f4ec9d14d53facc25ffeab521a9))
+
 ### [0.0.6](https://github.com/andrewmkrug/AMKenv/compare/v0.0.5...v0.0.6) (2022-02-14)
 
 ### [0.0.5](https://github.com/andrewmkrug/AMKenv/compare/v0.0.4...v0.0.5) (2022-02-13)
