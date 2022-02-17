@@ -46,14 +46,19 @@ let scripts = readdir(
             console.log(`There was an error reading ${file.name}: ${err}`);
           }
         });
-        let regex = /(\/\/[\ ]+img:) ([A-z\/\.]+)/gi;
+
+        // delete previously generated icon paths
+        let delRegex = /(\/\/[\ ]+img:) ([A-z\/\.-]+)\n/gi;
+        contents = contents.replace(delRegex, "");
+
+        let regex = /((\/\/[\ ]+base-img:) ([A-z\/\.-]+))\n/gi;
         let match = regex.exec(contents);
         if (match) {
           let newContents = "";
           if (match[2].startsWith(kenv)) {
             newContents = contents.replace(regex, `$1 $2`);
           } else {
-            newContents = contents.replace(regex, `$1 ${kenv}$2`);
+            newContents = contents.replace(regex, `$1\n// img: ${kenv}$3\n`);
           }
           writeFileSync(filename, newContents, (err) => {
             if (err) {

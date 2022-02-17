@@ -2,7 +2,7 @@
 // Description: Quickly open and access notes in markdown.
 // Author: Andrew M Krug
 // Twitter: @andrewmkrug
-// img: /assets/markdown.svg
+// base-img: /assets/markdown.svg
 
 /** @type {import("@johnlindquist/kit")} */
 

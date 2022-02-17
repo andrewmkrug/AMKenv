@@ -17,13 +17,16 @@
     "url": "https://github.com/andrewmkrug/AMKenv.git"
   },
   "scripts": {
-    "prepare": "node index.js",
+    "prepare": "husky install",
+    "postprepare": "node index.js",
+    "precommit": "node precommit.js",
     "release": "standard-version",
     "resolve:icons": "node getIcons.js"
   },
   "devDependencies": {
     "browser-logos": "github:alrra/browser-logos#70.4.1",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "husky": "^7.0.0"
   },
   "dependencies": {
     "@johnlindquist/kit": "^0.5.2",
