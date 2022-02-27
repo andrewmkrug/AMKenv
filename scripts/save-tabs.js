@@ -3,7 +3,6 @@
 // Author: Andrew M Krug
 // twitter: @andrewmkrug
 // base-img: /assets/save-tabs.svg
-// img: /Users/andrewmkrug/.kenv/assets/save-tabs.svg
 // icon: /assets/icon.png
 
 import "@johnlindquist/kit";
