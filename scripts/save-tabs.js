@@ -3,6 +3,7 @@
 // Author: Andrew M Krug
 // twitter: @andrewmkrug
 // base-img: /assets/save-tabs.svg
+// icon: /assets/icon.png
 
 import "@johnlindquist/kit";
 import browsers from "../lib/browsers.js";
