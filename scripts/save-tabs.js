@@ -3,6 +3,7 @@
 // Author: Andrew M Krug
 // twitter: @andrewmkrug
 // base-img: /assets/LegoGuy.svg
+// img: /Users/andrewmkrug/.kenv/assets/LegoGuy.svg
 // icon: /assets/icon.png
 
 import "@johnlindquist/kit";
