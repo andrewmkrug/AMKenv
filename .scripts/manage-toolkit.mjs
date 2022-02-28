@@ -30,9 +30,29 @@ var portInUse = function(port, callback) {
   });
   server.listen(port, "127.0.0.1");
 };
-var runnning = portInUse(45456, function(returnValue) {
-  log(returnValue);
+var running = portInUse(45456, function(returnValue) {
+  log(`The port 45456 is ${returnValue}`);
   return returnValue;
 });
+var r = () => {
+  var server = net.createServer(function(socket) {
+    socket.write("Echo server\r\n");
+    socket.pipe(socket);
+  });
+  server.on("error", function(e) {
+    log(e);
+    log(`The port 45456 is running`);
+    return true;
+  });
+  server.on("listening", function(e) {
+    log(e);
+    log(`The port 45456 is not running`);
+    server.close();
+    return false;
+  });
+  server.listen(45456, "127.0.0.1");
+};
 var choice = await arg("What do you want to do?", async () => {
+  let choices = [r ? { name: "Start" } : { name: "Stop" }, { name: "Update" }];
+  return choices;
 });

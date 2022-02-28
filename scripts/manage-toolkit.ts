@@ -48,11 +48,35 @@ var portInUse = function (port, callback) {
 
 
 
-let runnning = portInUse(45456, function (returnValue) {
-    log(returnValue);
+let running = portInUse(45456, function (returnValue) {
+    log(`The port 45456 is ${returnValue}`);
     return (returnValue);
 });
 
+let r = () => {
+    var server = net.createServer(function (socket) {
+        socket.write('Echo server\r\n');
+        socket.pipe(socket);
+    });
+
+    server.on('error', function (e) {
+        log(e);
+        log(`The port 45456 is running`);
+        return (true);
+    });
+    server.on('listening', function (e) {
+        log(e)
+        log(`The port 45456 is not running`);
+        server.close();
+        return (false);
+    });
+
+    server.listen(45456, '127.0.0.1');
+}
+
 let choice = await arg("What do you want to do?", async () => {
 
+    let choices = [r ? { name: "Start" } : { name: "Stop" }, { name: "Update" }];
+
+    return (choices);
 })
