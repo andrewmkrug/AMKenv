@@ -1,5 +1,4 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 792 612" style="enable-background:new 0 0 792 612;" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg">
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);}
 	.st1{filter:url(#a);}
@@ -11,7 +10,7 @@
 </filter>
 <g>
 	<defs>
-		<rect id="SVGID_1_" x="135.5" width="520.5" height="612"/>
+		<rect id="SVGID_1_" x="135.5" width="100.5" height="100"/>
 	</defs>
 	<clipPath id="SVGID_2_">
 		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
