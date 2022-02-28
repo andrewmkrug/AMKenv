@@ -26,8 +26,8 @@ if (!process.env[envKey]) {
     await exec(`npm install`);
 }
 
-let running = exec(`lsof -nP -iTCP -sTCP:LISTEN | grep 45456`)
-dev(running);
+let running = await execa(`lsof -nP -iTCP -sTCP:LISTEN | grep 45456`)
+log(running);
 
 let choice = await arg("What do you want to do?", async () => {
 

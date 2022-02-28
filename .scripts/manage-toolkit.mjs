@@ -14,7 +14,7 @@ if (!process.env[envKey]) {
   cd(`toolkit-server`);
   await exec(`npm install`);
 }
-var running = exec(`lsof -nP -iTCP -sTCP:LISTEN | grep 45456`);
+var running = await execa(`lsof -nP -iTCP -sTCP:LISTEN | grep 45456`);
 log(running);
 var choice = await arg("What do you want to do?", async () => {
 });
