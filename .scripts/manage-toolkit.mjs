@@ -1,5 +1,6 @@
 // .kenv/kenvs/shared/scripts/manage-toolkit.ts
 import "@johnlindquist/kit";
+var netstat = await npm("node-netstat");
 var envKey = "GIT_MOCK_PATH";
 if (!process.env[envKey]) {
   let input = await path({
@@ -14,7 +15,8 @@ if (!process.env[envKey]) {
   cd(`toolkit-server`);
   await exec(`npm install`);
 }
-var running = await execa(`lsof -nP -iTCP -sTCP:LISTEN | grep 45456`);
-log(running);
+var runnning = await netstat.isPortOpen(45656);
+log(runnning);
+dev(runnning);
 var choice = await arg("What do you want to do?", async () => {
 });

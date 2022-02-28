@@ -5,6 +5,7 @@
 
 import "@johnlindquist/kit"
 
+let netstat = await npm("node-netstat")
 
 
 const envKey = "GIT_MOCK_PATH";
@@ -26,9 +27,9 @@ if (!process.env[envKey]) {
     await exec(`npm install`);
 }
 
-let running = await execa(`lsof -nP -iTCP -sTCP:LISTEN | grep 45456`)
-log(running);
-
+let runnning = await netstat.isPortOpen(45656);
+log(runnning)
+dev(runnning)
 let choice = await arg("What do you want to do?", async () => {
 
 })
