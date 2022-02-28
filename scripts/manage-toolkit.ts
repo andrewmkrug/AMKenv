@@ -4,6 +4,7 @@
 // Twitter: @andrewmkrug
 
 import "@johnlindquist/kit"
+var net = await import('net');
 
 let netstat = await npm("node-netstat")
 
@@ -27,9 +28,31 @@ if (!process.env[envKey]) {
     await exec(`npm install`);
 }
 
-let runnning = await netstat.isPortOpen(45656);
-log(runnning)
-dev(runnning)
+
+var portInUse = function (port, callback) {
+    var server = net.createServer(function (socket) {
+        socket.write('Echo server\r\n');
+        socket.pipe(socket);
+    });
+
+    server.on('error', function (e) {
+        callback(true);
+    });
+    server.on('listening', function (e) {
+        server.close();
+        callback(false);
+    });
+
+    server.listen(port, '127.0.0.1');
+};
+
+
+
+let runnning = portInUse(45456, function (returnValue) {
+    log(returnValue);
+    return (returnValue);
+});
+
 let choice = await arg("What do you want to do?", async () => {
 
 })
