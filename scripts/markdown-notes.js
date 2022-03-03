@@ -40,7 +40,6 @@ let tools = await [
     img: await kenvPath("/assets/visual-studio-code.svg")
   }
 ];
-dev(tools);
 async function pathToArray(path) {
   log(path);
   let pathArray = path.split("/");
