@@ -22,7 +22,7 @@ if (!process.env[envKey]) {
   global.env[envKey] = process.env[envKey] = input;
 }
 
-let obsidianDir = await env("NOTES_DIR", "Path to directory for saving tabs");
+let notesDir = await env("NOTES_DIR", "Path to directory for saving tabs");
 log("getting tabs");
 
 let browser = await arg("Which browser:", browsers);
@@ -49,6 +49,6 @@ let choices = {
 
 let name = await arg(choices);
 
-log(`${obsidianDir}/${name}`);
+log(`${notesDir}/${name}`);
 
-await appendFile(`${obsidianDir}/${name}.md`, notes);
+await appendFile(`${notesDir}/${name}.md`, notes);
