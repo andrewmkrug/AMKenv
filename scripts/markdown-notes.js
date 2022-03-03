@@ -6,7 +6,19 @@
 
 /** @type {import("@johnlindquist/kit")} */
 
-let notesDir = await env("OBSIDIAN_DIR");
+// let notesDir = await env("MD_DIR", "Path to directory for saving notes");
+
+const envKey = "MD_DIR";
+
+if (!process.env[envKey]) {
+  let input = await path({
+    startPath: "~/",
+    hint: "Path to directory for saving notes"
+  });
+
+  await global.cli("set-env-var", envKey, input);
+  global.env[envKey] = process.env[envKey] = input;
+}
 
 let tools = [
   {
