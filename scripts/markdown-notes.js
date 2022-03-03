@@ -3,6 +3,7 @@
 // Author: Andrew M Krug
 // Twitter: @andrewmkrug
 // base-img: /assets/markdown.svg
+// img: /Users/andrewmkrug/.kenv/assets/markdown.svg
 
 /** @type {import("@johnlindquist/kit")} */
 
@@ -38,7 +39,7 @@ let tools = await [
     img: await kenvPath("/assets/visual-studio-code.svg")
   }
 ];
-log(tools);
+dev(tools);
 async function pathToArray(path) {
   log(path);
   let pathArray = path.split("/");
