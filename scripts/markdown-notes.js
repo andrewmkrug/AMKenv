@@ -46,7 +46,7 @@ async function pathToArray(path) {
 }
 
 onTab("Notes", async () => {
-  let note = process.env[envKey];
+  let note = await path(await env(envKey));
 
   let tool = await arg("Tool:", tools);
   log(`Opening ${note} with ${tool.name}`);
