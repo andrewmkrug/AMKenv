@@ -20,6 +20,7 @@ if (!process.env[envKey]) {
   global.env[envKey] = process.env[envKey] = input;
 }
 
+let notesDir = await env(envKey);
 let tools = [
   {
     name: "Obsidian",
