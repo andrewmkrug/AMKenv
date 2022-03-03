@@ -68,7 +68,7 @@ onTab("Notes", async () => {
       let contents = await ensureReadFile(`${note}`);
       while (true) {
         log("REPL");
-        contents = await editor(contents);
+        contents = await editor({ contents: contents });
         await writeFile(cmd, contents);
       }
       break;
