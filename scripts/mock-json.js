@@ -2,9 +2,10 @@
 // Author: Andrew M Krug
 // Description: A toolkit for managing your JSON
 // Twitter: @andrewmkrug
+// base-img: /assets/image2vector.svg
+// img: /Users/andrewmkrug/.kenv/assets/image2vector.svg
 
 import "@johnlindquist/kit";
-const { convert } = await npm("json-to-json-schema");
 const Ajv = await npm("ajv");
 const jju = await npm("jju");
 const jsf = await npm("json-schema-faker");

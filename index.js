@@ -48,10 +48,10 @@ let scripts = readdir(
         });
 
         // delete previously generated icon paths
-        let delRegex = /(\/\/[\ ]+img:) ([A-z\/\.-]+)\n/gi;
+        let delRegex = /(\/\/ img:) ([A-z0-9\/\.-]+)\n/gi;
         contents = contents.replace(delRegex, "");
 
-        let regex = /((\/\/[\ ]+base-img:) ([A-z\/\.-]+))\n/gi;
+        let regex = /((\/\/[\ ]+base-img:) ([A-z0-9\/\.-]+))\n/gi;
         let match = regex.exec(contents);
         if (match) {
           let newContents = "";
@@ -65,6 +65,9 @@ let scripts = readdir(
               console.log(`There was an error writing ${file.name}: ${err}`);
             }
           });
+          console.log(`${file.name} updated`);
+        } else {
+          console.log(`${file.name} does not contain a base-img:`);
         }
       }
     });

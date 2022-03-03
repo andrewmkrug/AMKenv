@@ -2,13 +2,12 @@
 // Description: Save all tabs to a markdownfile, with support for Obsidian.
 // Author: Andrew M Krug
 // twitter: @andrewmkrug
-// base-img: /assets/image2vector.svg
-// img: /Users/andrewmkrug/.kenv/assets/image2vector.svg
+// base-img: /assets/save-tabs.svg
 // icon: /assets/icon.png
 
 import "@johnlindquist/kit";
 import browsers from "../lib/browsers.js";
-import dateformat from "dateformat";
+let dateformat = await npm("dateformat");
 
 const envKey = "NOTES_DIR";
 

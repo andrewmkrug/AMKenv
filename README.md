@@ -2,6 +2,8 @@
 
 The recommended process is to use the url and clone this kenv into your main kenv.
 
+Node version 16 is needed for the `postprepare` script to copy over all of the images.
+
 ## Setup
 
 Make sure you have added `kit` to your cli.
