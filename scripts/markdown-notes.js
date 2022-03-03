@@ -50,7 +50,26 @@ onTab("Notes", async () => {
   let note = await path(await env(envKey));
 
   log(tools);
-  let tool = await arg("Tool:", tools);
+  let tool = await arg({
+    placeholder: "Tool:",
+    choices: [
+      {
+        name: "Obsidian",
+        description: "Markdown note taking app",
+        img: await kenvPath("/assets/obsidian-logo.svg")
+      },
+      {
+        name: "Markdown",
+        description: "Popup window for quick editing, will be a paid feature",
+        img: await kenvPath("/assets/script-kit-logo.svg")
+      },
+      {
+        name: "VS Code",
+        description: "Code editor from Microsoft",
+        img: await kenvPath("/assets/visual-studio-code.svg")
+      }
+    ]
+  });
   log(`Opening ${note} with ${tool.name}`);
 
   let notePathArray = await pathToArray(note);
