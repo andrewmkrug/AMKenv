@@ -25,7 +25,10 @@ let tools = await [
   {
     name: "Obsidian",
     description: "Markdown note taking app",
-    img: await kenvPath("/assets/obsidian-logo.svg")
+    img: await kenvPath("/assets/obsidian-logo.svg"),
+    preview: async () => {
+      await html(kenvPath("/assets/obsidian-logo.svg"));
+    }
   },
   {
     name: "Markdown",
