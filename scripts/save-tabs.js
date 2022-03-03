@@ -37,8 +37,6 @@ let choices = {
 
 let name = await arg(choices);
 
-let dir = await path(obsidianDir);
-
 log(`${obsidianDir}/${name}`);
 
 await appendFile(`${obsidianDir}/${name}.md`, notes);
