@@ -25,11 +25,7 @@ let tabsMd = tabs
 
 let notes = await editor(tabsMd);
 
-let name = await arg(choices);
-
 let date = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
-
-let dir = await path(obsidianDir);
 
 let choices = {
   type: "input",
@@ -38,6 +34,10 @@ let choices = {
   hint: "Enter a filename",
   input: `${date}`
 };
+
+let name = await arg(choices);
+
+let dir = await path(obsidianDir);
 
 log(`${obsidianDir}/${name}`);
 
