@@ -8,7 +8,7 @@
 
 // let notesDir = await env("MD_DIR", "Path to directory for saving notes");
 
-const envKey = "MD_DIR";
+const envKey = "NOTES_DIR";
 
 if (!process.env[envKey]) {
   let input = await path({

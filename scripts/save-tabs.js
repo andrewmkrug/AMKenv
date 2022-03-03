@@ -10,6 +10,18 @@ import "@johnlindquist/kit";
 import browsers from "../lib/browsers.js";
 import dateformat from "dateformat";
 
+const envKey = "NOTES_DIR";
+
+if (!process.env[envKey]) {
+  let input = await path({
+    startPath: "~/",
+    hint: "Path to directory for saving notes"
+  });
+
+  await global.cli("set-env-var", envKey, input);
+  global.env[envKey] = process.env[envKey] = input;
+}
+
 let obsidianDir = await env("NOTES_DIR", "Path to directory for saving tabs");
 log("getting tabs");
 
