@@ -3,7 +3,6 @@
 // Author: Andrew M Krug
 // Twitter: @andrewmkrug
 // base-img: /assets/markdown.svg
-// img: /Users/andrewmkrug/.kenv/assets/markdown.svg
 
 /** @type {import("@johnlindquist/kit")} */
 
@@ -53,23 +52,7 @@ onTab("Notes", async () => {
   log(tools);
   let tool = await arg({
     placeholder: "Tool:",
-    choices: async () => [
-      {
-        name: "Obsidian",
-        description: "Markdown note taking app",
-        img: await kenvPath("/assets/obsidian-logo.svg")
-      },
-      {
-        name: "Markdown",
-        description: "Popup window for quick editing, will be a paid feature",
-        img: await kenvPath("/assets/script-kit-logo.svg")
-      },
-      {
-        name: "VS Code",
-        description: "Code editor from Microsoft",
-        img: await kenvPath("/assets/visual-studio-code.svg")
-      }
-    ]
+    choices: async () => tools
   });
   log(`Opening ${note} with ${tool.name}`);
 
