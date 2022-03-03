@@ -26,6 +26,6 @@ if (!process.env[envKey]) {
 
 let dir = await env(envKey);
 
-await terminal(`cd ${dir} && npm run start`);
+await terminal(`cd ${dir}`, `npm run start`);
 
 await browse(`https://toolkit.krugweb.services`);
