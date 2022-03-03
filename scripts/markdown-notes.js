@@ -27,7 +27,7 @@ let tools = await [
   {
     name: "Obsidian",
     description: "Markdown note taking app",
-    img: await kenvPath("kenvs", "shared", "/assets/obsidian-logo.svg")
+    img: await kenvPath("/assets/obsidian-logo.svg")
   },
   {
     name: "Markdown",
@@ -40,6 +40,7 @@ let tools = await [
     img: await kenvPath("/assets/visual-studio-code.svg")
   }
 ];
+dev(tools);
 async function pathToArray(path) {
   log(path);
   let pathArray = path.split("/");
