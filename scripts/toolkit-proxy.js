@@ -24,6 +24,8 @@ if (!process.env[envKey]) {
   await exec(`npm install`);
 }
 
-terminal(`cd ${env(envKey)} && npm run start`);
+let dir = await env(envKey);
 
-browse(`https://toolkit.krugweb.services`);
+await terminal(`cd ${dir} && npm run start`);
+
+await browse(`https://toolkit.krugweb.services`);
