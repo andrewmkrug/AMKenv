@@ -3,6 +3,7 @@
 // Author: Andrew M Krug
 // Twitter: @andrewmkrug
 // base-img: /assets/markdown.svg
+// img: /Users/andrewmkrug/.kenv/assets/markdown.svg
 
 /** @type {import("@johnlindquist/kit")} */
 
@@ -49,6 +50,7 @@ async function pathToArray(path) {
 onTab("Notes", async () => {
   let note = await path(await env(envKey));
 
+  log(tools);
   let tool = await arg("Tool:", tools);
   log(`Opening ${note} with ${tool.name}`);
 
