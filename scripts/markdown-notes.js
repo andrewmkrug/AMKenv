@@ -3,6 +3,7 @@
 // Author: Andrew M Krug
 // Twitter: @andrewmkrug
 // base-img: /assets/markdown.svg
+// img: /Users/andrewmkrug/.kenv/assets/markdown.svg
 
 /** @type {import("@johnlindquist/kit")} */
 
@@ -52,7 +53,7 @@ onTab("Notes", async () => {
   log(tools);
   let tool = await arg({
     placeholder: "Tool:",
-    choices: [
+    choices: async () => [
       {
         name: "Obsidian",
         description: "Markdown note taking app",
