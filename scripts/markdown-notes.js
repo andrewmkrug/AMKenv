@@ -38,7 +38,7 @@ let tools = [
     img: kenvPath("/assets/visual-studio-code.svg")
   }
 ];
-
+log(tools);
 async function pathToArray(path) {
   log(path);
   let pathArray = path.split("/");
