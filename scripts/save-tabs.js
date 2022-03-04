@@ -7,7 +7,7 @@
 
 import "@johnlindquist/kit";
 import browsers from "../lib/browsers.js";
-let dateformat = await npm("dateformat");
+let dateformat = await npm("date-format");
 
 const envKey = "NOTES_DIR";
 

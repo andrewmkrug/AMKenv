@@ -3,9 +3,9 @@
 // Description: A toolkit for managing your JSON
 // Twitter: @andrewmkrug
 // base-img: /assets/image2vector.svg
-// img: /Users/andrewmkrug/.kenv/assets/image2vector.svg
 
 import "@johnlindquist/kit";
+
 const Ajv = await npm("ajv");
 const jju = await npm("jju");
 const jsf = await npm("json-schema-faker");
@@ -14,6 +14,8 @@ jsf.extend("faker", () => faker);
 
 const ajv = new Ajv();
 let { schemas, write } = await db({ schemas: [] });
+
+const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
 // onTab("Create Data", async () => { })
 onTab("Upload Schema", async () => {
@@ -103,19 +105,37 @@ onTab("Validate JSON", async () => {
       input = await editor();
     }
 
-    let data = jju.parse(input);
+    let valid = undefined;
 
-    let validate = ajv.compile(schema["schema"]);
-    let valid = await validate(data);
-    setPanel(md(`# ${valid ? "Valid" : "Invalid"}`));
-    if (!valid) console.log(validate.errors);
-    log(valid);
+    try {
+      let validate = ajv.compile(schema["schema"]);
+      valid = await validate(input);
+    } catch (e) {
+      log(`Error with initial structure: ${e}`);
+    }
+
+    if (valid == undefined) {
+      try {
+        let data = jju.parse(input);
+        let validate = ajv.compile(schema["schema"]);
+        valid = await validate(data);
+      } catch (e) {
+        log(`Error with validation: ${e}`);
+      }
+    }
+    await setPanel(md(`# ${valid ? "Valid" : "Invalid"}`));
+
+    await timer(5000);
+
     if (valid) {
       let filename = await path({ hint: "Save the JSON" });
       await writeJson(filename, data);
     } else {
-      await editor({ hint: "Edit the JSON", content: data });
+      log(validate.errors);
+      await editor({
+        hint: `Edit the JSON to fix the errors ${validate.errors}`,
+        content: data
+      });
     }
   }
-  // let choice = await arg("What do you want to do?", [])
 });

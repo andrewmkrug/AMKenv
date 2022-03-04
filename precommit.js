@@ -20,7 +20,7 @@ let scripts = readdir(
         });
 
         // delete previously generated icon paths
-        let delRegex = /(\/\/[\ ]+img:) ([A-z\/\.-]+)\n/gi;
+        let delRegex = /(\/\/[\ ]+img:) ([A-z0-9\/\.-]+)\n/gi;
         contents = contents.replace(delRegex, "");
 
         writeFileSync(filename, contents, (err) => {

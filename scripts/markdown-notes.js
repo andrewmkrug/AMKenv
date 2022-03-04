@@ -6,8 +6,6 @@
 
 /** @type {import("@johnlindquist/kit")} */
 
-// let notesDir = await env("MD_DIR", "Path to directory for saving notes");
-
 const envKey = "NOTES_DIR";
 
 if (!process.env[envKey]) {
@@ -20,9 +18,8 @@ if (!process.env[envKey]) {
   global.env[envKey] = process.env[envKey] = input;
 }
 
-log(kenvPath());
-
 let notesDir = await env(envKey);
+
 let tools = await [
   {
     name: "Obsidian",
@@ -40,6 +37,7 @@ let tools = await [
     img: await kenvPath("/assets/visual-studio-code.svg")
   }
 ];
+
 async function pathToArray(path) {
   log(path);
   let pathArray = path.split("/");
@@ -56,8 +54,6 @@ onTab("Notes", async () => {
     choices: async () => tools
   });
   log(`Opening ${note} with ${tool.name}`);
-
-  let notePathArray = await pathToArray(note);
 
   let noteLocation = note.replace(notesDir + "/", "");
 
