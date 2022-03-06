@@ -4,7 +4,7 @@
 // Twitter: @andrewmkrug
 // base-img: /assets/easy-links.svg
 
-/** @type {import("@johnlindquist/kit")} */
+import("@johnlindquist/kit");
 
 import browsers from "../lib/browsers.js";
 

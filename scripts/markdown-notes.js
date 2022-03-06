@@ -4,9 +4,13 @@
 // Twitter: @andrewmkrug
 // base-img: /assets/markdown.svg
 
-/** @type {import("@johnlindquist/kit")} */
+import("@johnlindquist/kit");
 
 const envKey = "NOTES_DIR";
+
+const kP = dirname(
+  dirname(import.meta.url.replace(/file:\/\//, "").split("?")[0])
+);
 
 if (!process.env[envKey]) {
   let input = await path({
@@ -24,17 +28,17 @@ let tools = await [
   {
     name: "Obsidian",
     description: "Markdown note taking app",
-    img: await kenvPath("/assets/obsidian-logo.svg")
+    img: await `${kP}/assets/obsidian-logo.svg`
   },
   {
     name: "Markdown",
     description: "Popup window for quick editing, will be a paid feature",
-    img: await kenvPath("/assets/script-kit-logo.svg")
+    img: await `${kP}/assets/script-kit-logo.svg`
   },
   {
     name: "VS Code",
     description: "Code editor from Microsoft",
-    img: await kenvPath("/assets/visual-studio-code.svg")
+    img: await `${kP}/assets/visual-studio-code.svg`
   }
 ];
 

@@ -18,7 +18,6 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "postprepare": "node index.js",
     "precommit": "node precommit.js",
     "release": "standard-version",
     "resolve:icons": "node getIcons.js"
