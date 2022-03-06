@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+
 <h1 align="center" id="title">A/Kenv</h1>
 
 <p id="description">A/K's shareable Kenv for Scriptkit</p>
@@ -36,7 +38,7 @@ nvm install 16 && nvm set default 16
 
 <p>4. Use the clone Kenv from within scriptkit</p>
 
-- Open Scritkit with <kbd>cmd</kbd> + <kbd>;</kbd>
+- Open Scritkit with <button class="kbc-button no-container kbc-button-xs">&#8984;</button> + <button class="kbc-button no-container kbc-button-xs">;</button>
 - Go to the Kit tab
   - 3 tabs or use your mouse
 - Select `Manage kenvs`
@@ -45,9 +47,8 @@ nvm install 16 && nvm set default 16
 
 <p>5. Install all the icons</p>
 
-```
-cd ~/.kenv/kenvs/AMKenv && npm run postprepare
-```
+- Open Scritkit with <button class="kbc-button no-container kbc-button-xs">&#8984;</button> + <button class="kbc-button no-container kbc-button-xs">;</button>
+- Run `AMKenv Bonuses` script and select `Install Images`
 
 ## Developent
 
