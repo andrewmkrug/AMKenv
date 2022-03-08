@@ -28,4 +28,4 @@ let dir = await env(envKey);
 
 await terminal(`cd ${dir} && npm run start`);
 
-await browse(`https://toolkit.krugweb.services`, "Google Chrome");
+await focusTab(`https://toolkit.krugweb.services`, "Google Chrome");
