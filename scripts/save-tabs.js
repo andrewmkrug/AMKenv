@@ -7,7 +7,7 @@
 
 import "@johnlindquist/kit";
 import browsers from "../lib/browsers.js";
-let dateformat = await npm("date-format");
+let dateformat = await npm("dateformat");
 
 const envKey = "NOTES_DIR";
 
@@ -36,14 +36,14 @@ let tabsMd = tabs
 
 let notes = await editor(tabsMd);
 
-let date = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
+let dt = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
 
 let choices = {
   type: "input",
   name: "filename",
   message: "Filename:",
   hint: "Enter a filename",
-  input: `${date}`
+  input: `${dt}`
 };
 
 let name = await arg(choices);
