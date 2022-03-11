@@ -13,9 +13,10 @@ let cJson = `${kenvPath('node_modules')}/@iconify/json/collections.json`
 log(cJson)
 let iconCollections = await readJson(cJson)
 
-iconCollections.forEach(iconCollection => {
-    log(iconCollection.name)
-})
+for(let collection of iconCollections) {
+// iconCollections.forEach(iconCollection => {
+    log(collection.name)
+}
 
 await log(iconCollections.length)
 
