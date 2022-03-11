@@ -5,10 +5,15 @@ import "@johnlindquist/kit"
 await npm("@iconify/json")
 await npm("@iconify/utils")
 // import { lookupCollections, locate } from '@iconify/json';
-
+// import collections from "@iconify/json/collections.json"
 
 let {collections, write} = await db("tools", { collections:[] })
 
+let cJson = `${kenvPath('node_modules')}/@iconify/json/collections.json`
+log(cJson)
+let iconCollections = await readJson(cJson)
+
+await log(iconCollections.length)
 
 // let t = await lookupCollections()
 
