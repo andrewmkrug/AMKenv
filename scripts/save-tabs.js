@@ -7,7 +7,9 @@
 
 import "@johnlindquist/kit";
 
-import browsers from "../lib/browsers.js";
+// import browsers from "../lib/browsers.js";
+
+let browsers = await import("../lib/browsers.js");
 
 const envKey = "NOTES_DIR";
 
@@ -26,17 +28,7 @@ if (!process.env[envKey]) {
 let notesDir = await env("NOTES_DIR", "Path to directory for MD based notes");
 log("getting tabs");
 
-let browser = await arg("Which browser:", [
-  {
-    // browser: "Chrome",
-    name: "Chrome"
-    // value: "Google Chrome",
-    // description: "Possibly the most popular browser."
-    // img: `${dirname(
-    //   dirname(import.meta.url.replace(/file:\/\//, ""))
-    // )}/assets/chrome.svg`
-  }
-]);
+let browser = await arg("Which browser:", browsers);
 
 let tabs = await getTabs(browser);
 log("got tabs");
