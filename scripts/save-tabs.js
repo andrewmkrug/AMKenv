@@ -40,7 +40,12 @@ let tabsMd = tabs
 
 let notes = await editor(tabsMd);
 
-let dt = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
+let dt = new Date()
+  .toISOString()
+  .replace(/T/, "--")
+  .replace(/:/g, "-")
+  .replace(/\..+/, "")
+  .split("Z")[0];
 
 let choices = {
   type: "input",
