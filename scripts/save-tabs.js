@@ -28,13 +28,13 @@ log("getting tabs");
 
 let browser = await arg("Which browser:", [
   {
-    browser: "Chrome",
-    name: "Chrome",
-    value: "Google Chrome",
-    description: "Possibly the most popular browser.",
-    img: `${dirname(
-      dirname(import.meta.url.replace(/file:\/\//, ""))
-    )}/assets/chrome.svg`
+    // browser: "Chrome",
+    name: "Chrome"
+    // value: "Google Chrome",
+    // description: "Possibly the most popular browser."
+    // img: `${dirname(
+    //   dirname(import.meta.url.replace(/file:\/\//, ""))
+    // )}/assets/chrome.svg`
   }
 ]);
 
