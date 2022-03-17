@@ -7,9 +7,9 @@
 
 import "@johnlindquist/kit";
 
-// import browsers from "../lib/browsers.js";
+import browsers from "../lib/browsers.js";
 
-let browsers = await import("../lib/browsers.js");
+// let browsers = await import("../lib/browsers.js");
 
 const envKey = "NOTES_DIR";
 
