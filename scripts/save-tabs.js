@@ -23,7 +23,7 @@ if (!process.env[envKey]) {
   global.env[envKey] = process.env[envKey] = input;
 }
 
-let notesDir = await env("NOTES_DIR", "Path to directory for saving tabs");
+let notesDir = await env("NOTES_DIR", "Path to directory for MD based notes");
 log("getting tabs");
 
 let browser = await arg("Which browser:", browsers);
@@ -38,14 +38,14 @@ let tabsMd = tabs
 
 let notes = await editor(tabsMd);
 
-let dt = dateformat(new Date(), `yyyy-mm-dd--hh-MM-ss-${browser}`);
+let dt = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
 
 let choices = {
   type: "input",
   name: "filename",
   message: "Filename:",
   hint: "Enter a filename",
-  input: `${dt}`
+  input: `${dt}-${browser}`
 };
 
 let name = await arg(choices);
