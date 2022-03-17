@@ -9,16 +9,21 @@ import "@johnlindquist/kit";
 
 import conventionalCommits from "../lib/conventional-commits.js";
 
-conventionalCommits.map((c) => {
+let cc = conventionalCommits.map((c) => {
   return {
-    name: c.title,
-    description: c.description,
-    img: c.emoji,
-    value: c.type
+    name: c.name
+    // description: `${c.description}`
+    // img: c.img,
+    // value: c.type
   };
 });
 
 let { scopes, write } = await db({ scopes: [] });
+
+let type = await arg(
+  { placeholder: "Commit type:", hint: "Enter a commit type" },
+  cc
+);
 
 let onNoChoices = async (input) => {
   if (input) setPanel(md(`# Enter to create "${input}"`));
@@ -47,10 +52,6 @@ if (typeof scope == "string") {
 }
 
 let scopeName = _.find(scopes, scope)?.name;
-let type = await arg(
-  { placeholder: "Commit type:", hint: "Enter a commit type" },
-  conventionalCommits
-);
 
 let show = await arg(
   {
@@ -68,3 +69,8 @@ let show = await arg(
     }
   ]
 );
+let messageWithEmoji = show ? `${type.emoji} ${message}` : message;
+
+let msg = `${type}(${scopeName})  ${messageWithEmoji}`;
+await copy(msg);
+await paste(msg);

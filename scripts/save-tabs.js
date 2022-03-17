@@ -6,10 +6,12 @@
 // icon: /assets/icon.png
 
 import "@johnlindquist/kit";
+
 import browsers from "../lib/browsers.js";
-let dateformat = await npm("dateformat");
 
 const envKey = "NOTES_DIR";
+
+log(browsers);
 
 if (!process.env[envKey]) {
   let input = await path({
@@ -36,7 +38,7 @@ let tabsMd = tabs
 
 let notes = await editor(tabsMd);
 
-let dt = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
+let dt = dateformat(new Date(), `yyyy-mm-dd--hh-MM-ss-${browser}`);
 
 let choices = {
   type: "input",
