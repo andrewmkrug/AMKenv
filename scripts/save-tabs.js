@@ -26,7 +26,17 @@ if (!process.env[envKey]) {
 let notesDir = await env("NOTES_DIR", "Path to directory for MD based notes");
 log("getting tabs");
 
-let browser = await arg("Which browser:", browsers);
+let browser = await arg("Which browser:", [
+  {
+    browser: "Chrome",
+    name: "Chrome",
+    value: "Google Chrome",
+    description: "Possibly the most popular browser.",
+    img: `${dirname(
+      dirname(import.meta.url.replace(/file:\/\//, ""))
+    )}/assets/chrome.svg`
+  }
+]);
 
 let tabs = await getTabs(browser);
 log("got tabs");
