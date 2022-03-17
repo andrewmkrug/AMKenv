@@ -6,10 +6,14 @@
 // icon: /assets/icon.png
 
 import "@johnlindquist/kit";
+
 import browsers from "../lib/browsers.js";
-let dateformat = await npm("date-format");
+
+// let browsers = await import("../lib/browsers.js");
 
 const envKey = "NOTES_DIR";
+
+log(browsers);
 
 if (!process.env[envKey]) {
   let input = await path({
@@ -21,7 +25,7 @@ if (!process.env[envKey]) {
   global.env[envKey] = process.env[envKey] = input;
 }
 
-let notesDir = await env("NOTES_DIR", "Path to directory for saving tabs");
+let notesDir = await env("NOTES_DIR", "Path to directory for MD based notes");
 log("getting tabs");
 
 let browser = await arg("Which browser:", browsers);
@@ -36,14 +40,19 @@ let tabsMd = tabs
 
 let notes = await editor(tabsMd);
 
-let date = dateformat(new Date(), "yyyy-mm-dd--hh-MM-ss");
+let dt = new Date()
+  .toISOString()
+  .replace(/T/, "--")
+  .replace(/:/g, "-")
+  .replace(/\..+/, "")
+  .split("Z")[0];
 
 let choices = {
   type: "input",
   name: "filename",
   message: "Filename:",
   hint: "Enter a filename",
-  input: `${date}`
+  input: `${dt}-${browser}`
 };
 
 let name = await arg(choices);
