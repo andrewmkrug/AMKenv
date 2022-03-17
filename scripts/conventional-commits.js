@@ -11,10 +11,11 @@ import conventionalCommits from "../lib/conventional-commits.js";
 
 let cc = conventionalCommits.map((c) => {
   return {
-    name: c.name
-    // description: `${c.description}`
-    // img: c.img,
-    // value: c.type
+    name: c.name,
+    description: `${c.description}`,
+    img: c.img,
+    type: c.type,
+    emoji: c.emoji
   };
 });
 
@@ -51,7 +52,7 @@ if (typeof scope == "string") {
   await write();
 }
 
-let scopeName = _.find(scopes, scope)?.name;
+let scopeName = await _.find(scopes, scope)?.name;
 
 let show = await arg(
   {
@@ -69,8 +70,11 @@ let show = await arg(
     }
   ]
 );
+
+// dev({ type, scopeName, message, show, scope });
+
 let messageWithEmoji = show ? `${type.emoji} ${message}` : message;
 
-let msg = `${type}(${scopeName})  ${messageWithEmoji}`;
+let msg = `${type.type}(${scope}) ${messageWithEmoji}`;
 await copy(msg);
 await paste(msg);
