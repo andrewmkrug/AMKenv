@@ -11,8 +11,6 @@ import browsers from "../lib/browsers.js";
 
 const envKey = "NOTES_DIR";
 
-log(browsers);
-
 if (!process.env[envKey]) {
   let input = await path({
     startPath: "~/",

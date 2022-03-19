@@ -63,10 +63,6 @@ if (choice.id == "install") {
       log(`err: ${err}`);
     }
   });
-
-  // install images
-
-  //   await term(`cd ${kenvDir} && npm run postprepare`);
 }
 
 if (choice.id == "upgrade") {
