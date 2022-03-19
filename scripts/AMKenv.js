@@ -12,13 +12,18 @@ const regex = /(\/\/[ ]+base-img: ([A-z0-9\/\.-]+)\n)/gi;
 let kenvDir = dirname(
   dirname(import.meta.url.replace(/file:\/\//, "")).split("?")[0]
 );
-log(kenvDir);
+log(`kenv: ${kenvDir}`);
 let choice = await arg("Which bonus:", [
   {
     name: "Install Images",
     description: "Installs all the images",
     img: kenvDir + "/assets/icon.png",
     id: "install"
+  },
+  {
+    name: "Upgrade AMKenv",
+    description: "Upgrades AMKenv to the latest version",
+    id: "upgrade"
   }
 ]);
 
@@ -64,7 +69,6 @@ if (choice.id == "install") {
   //   await term(`cd ${kenvDir} && npm run postprepare`);
 }
 
-if (choice.name == "Upgrade") {
+if (choice.id == "upgrade") {
+  await term(`kit kenv-pull ${kenvDir.split("/").pop()}`);
 }
-
-// for libs extract

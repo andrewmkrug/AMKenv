@@ -9,8 +9,6 @@ import "@johnlindquist/kit";
 
 import browsers from "../lib/browsers.js";
 
-// let browsers = await import("../lib/browsers.js");
-
 const envKey = "NOTES_DIR";
 
 log(browsers);
@@ -26,7 +24,6 @@ if (!process.env[envKey]) {
 }
 
 let notesDir = await env("NOTES_DIR", "Path to directory for MD based notes");
-log("getting tabs");
 
 let browser = await arg("Which browser:", browsers);
 
